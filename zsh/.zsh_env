@@ -1,3 +1,6 @@
+# global.
+export DOTFILES="$HOME/.dotfiles"
+
 # common.
 # set host metadata.
 [ -z "$LANG" ]     && export LANG=en_US.UTF-8
@@ -10,8 +13,8 @@
 
 # mac-specific.
 if [ "$HOSTTYPE" = "Darwin" ]; then
-export MANPATH="/usr/local/man:$MANPATH"
-export LSCOLORS="ExFxCxDxBxegedabagacad"
+    export MANPATH="/usr/local/man:$MANPATH"
+    export LSCOLORS="ExFxCxDxBxegedabagacad"
 fi
 
 # "most" as pager is more than "less" and "more".
@@ -21,3 +24,15 @@ export EDITOR="emacs"
 
 # go.
 export GO111MODULE=on
+
+# remove '/', '=', '.' frmm WORDCHARS default to backspace up to '/'.
+export WORDCHARS='*?_-[]~&;!#$%^(){}<>'
+
+# path.
+# Pip binary path.
+PIP_PATH=$(python -m site --user-base)/bin
+
+# - Go
+# - Pip
+# - Rust
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:$PIP_PATH:$HOME/.cargo/bin

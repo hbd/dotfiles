@@ -10,7 +10,16 @@ alias bc="bc -l $HOME/.bcrc"
 # user.
 alias l='ls -al'
 alias ll='ls -l'
+alias pbc="pbcopy"
+# get size of top-level dirs.
+# KB.
+alias ducks='du -cks * | sort -rn | head'
+# MB.
+alias ducms='du -cms * | sort -rn | head'
+# grep for go.
+alias fggrep=fgrep -R --color --include='*.go'
 
 # emacs.
 # attach to server using emacsclient.
 alias emacs="emacsclient -a '' -ct"
+
