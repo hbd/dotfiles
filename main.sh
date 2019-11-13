@@ -20,11 +20,14 @@ function main {
     # install zsh
     # install oh-my-zsh # vendor instead?
     # install most docker
+    # install zsh-multi-search
+    # install diff-so-fancy
 
     # mac specific.
     # if uname == Darwin then install brew docker-machine
 
     link zsh
+    link git
 }
 
 main

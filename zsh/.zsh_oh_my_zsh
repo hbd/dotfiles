@@ -22,11 +22,13 @@ DOCKER_MACHINE_NAME="default"
 plugins=(
     docker
     encode64
+    fast-syntax-highlighting
     git
     gnu-utils
     golang
     gpg-agent
     history-search-multi-word
+    kubectl
     mosh
     rsync
     ssh-agent
