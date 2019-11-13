@@ -1,3 +1,5 @@
+;;; Code:
+
 ;; Theme.
 (load-theme 'misterioso)
 
@@ -34,3 +36,9 @@
 
 ;; Show trailing whitespaces.
 (setq-default show-trailing-whitespace t)
+
+;; Prevent emacs asking to follow sybolic link to VC'd file.
+(setq vc-follow-symlinks nil)
+
+(provide 'init-general)
+;;; init-general.el ends here
