@@ -1,0 +1,13 @@
+# clean is a helper to rm tmp/cached files.
+function clean {
+    foreach tildefile (./${1}/*~(.N) ./${1}/.*~(.N) ./${1}/\#*\#(.N) ./${1}/.\#*\#(.N) ./${1}/a.out(.N))
+    rm -vf ${tildefile} | sed 's/\/\//\//'
+    end
+
+    find ./${1} -name 'flymake_*.go' -delete
+    find ./${1} -name '.flymake_*.go' -delete
+    find ./${1} -name '.\#*' -delete
+    find ./${1} -name '*~' -delete
+    find ./${1} -name '*.orig' -delete
+    find ./${1} -name '*.test' -delete
+}

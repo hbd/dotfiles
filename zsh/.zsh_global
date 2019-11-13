@@ -1,0 +1,23 @@
+# default to emacs for editing.
+bindkey -e
+
+# zsh history config.
+## size and behavior.
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+# sharehistory     : Share history across terminals.
+# incappendhistory : Immediately append to the history file, not just when a term is killed.
+setopt appendhistory \
+       autocd        \
+       extendedglob  \
+       incappendhistory
+## searching.
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+# M-l lowercases word.
+bindkey "^[l" down-case-word

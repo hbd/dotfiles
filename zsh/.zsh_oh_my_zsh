@@ -1,0 +1,36 @@
+# disable compfix to enable multi-user writing to shared zsh dir(s).
+ZSH_DISABLE_COMPFIX=true
+
+ZSH_THEME="clean"
+
+# use case sensitive completion.
+CASE_SENSITIVE="true"
+
+# disable autocorrection.
+DISABLE_CORRECTION="true"
+
+# tmux.
+# autostart tmux.
+[ -z "$ZSH_TMUX_AUTOSTART" ] && ZSH_TMUX_AUTOSTART="true"
+
+# docker.
+# autostart docker-machine default.
+DOCKER_MACHINE_AUTOSTART="true"
+DOCKER_MACHINE_NAME="default"
+
+
+plugins=(
+    docker
+    encode64
+    git
+    gnu-utils
+    golang
+    gpg-agent
+    history-search-multi-word
+    mosh
+    rsync
+    ssh-agent
+    sudo
+    tmux
+)
+

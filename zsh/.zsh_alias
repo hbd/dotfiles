@@ -1,0 +1,16 @@
+# github.com/hbd
+
+# common.
+alias grep="grep --color=auto -n"
+alias rm="rm -v"
+alias a64="encode64"
+alias d64="decode64"
+alias bc="bc -l $HOME/.bcrc"
+
+# user.
+alias l='ls -al'
+alias ll='ls -l'
+
+# emacs.
+# attach to server using emacsclient.
+alias emacs="emacsclient -a '' -ct"

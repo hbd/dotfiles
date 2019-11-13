@@ -1,0 +1,23 @@
+# common.
+# set host metadata.
+[ -z "$LANG" ]     && export LANG=en_US.UTF-8
+[ -z "$HOSTTYPE" ] && export HOSTTYPE=$(uname -s)
+[ -z "$HOST" ]     && export HOST=$(uname -n)
+[ -z "$SHELL" ]    && export SHELL=$(which zsh)
+
+# set GPGKEY if exists.
+[ -f $HOME/.gpgkey ] && export GPGKEY=$(cat $HOME/.gpgkey)
+
+# mac-specific.
+if [ "$HOSTTYPE" = "Darwin" ]; then
+export MANPATH="/usr/local/man:$MANPATH"
+export LSCOLORS="ExFxCxDxBxegedabagacad"
+fi
+
+# "most" as pager is more than "less" and "more".
+export PAGER="most"
+# set editor to emacs.
+export EDITOR="emacs"
+
+# go.
+export GO111MODULE=on
