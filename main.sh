@@ -8,7 +8,7 @@ function echo2 {
 # example usage: link zsh
 function link {
     echo2 "linking files in $1..."
-    local files=$(ls -a $1 | grep .zsh)
+    local files=$(ls -a $1 | grep $1)
     local curdir=$(pwd)
     for f in $files; do
 	path="$HOME/$f"
@@ -28,6 +28,8 @@ function main {
 
     link zsh
     link git
+    link emacs
+    link tmux
 }
 
 main

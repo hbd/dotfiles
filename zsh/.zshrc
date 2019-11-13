@@ -1,7 +1,7 @@
 # github.com/hbd
 
 # global config.
-source .zsh_global
+source ~/.zsh_global
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # user config.
@@ -29,7 +29,7 @@ echo
 echo -n "Loading oh-my-zsh..."
 a=$(mstime)
 export ZSH="/Users/zak/.oh-my-zsh"
-source .zsh_oh_my_zsh
+source ~/.zsh_oh_my_zsh
 source $ZSH/oh-my-zsh.sh
 b=$(mstime)
 echo " loaded in $(echo "($b - $a)" | \bc) ms."
