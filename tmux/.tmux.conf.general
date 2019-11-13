@@ -1,0 +1,80 @@
+# basic settings
+set-window-option -g mode-keys emacs
+set-option -g status-keys emacs
+
+# Window settings.
+# Title.
+set-option -g set-titles on
+set-window-option -g automatic-rename on # auto name
+
+bind -n Home choose-tree
+# Cycling windows.
+bind -n S-right next
+bind -n S-left prev
+# Cycling sessions.
+bind -n S-Up switch-client -p
+bind -n S-Down switch-client -n
+
+# status bar
+set-option -g visual-activity on
+set-window-option -g monitor-activity on
+set-window-option -g window-status-current-style fg=white
+
+# clock
+set-window-option -g clock-mode-style 12
+
+bind-key = select-layout main-vertical
+bind < resize-pane -L 25
+bind > resize-pane -R 25
+
+# Set status bar
+set -g status-style bg=colour250
+set -g status-style fg=black
+# Highlight active window
+set-window-option -g window-status-current-style fg=white
+set-window-option -g window-status-current-style bg=black
+
+set-window-option -g window-status-bell-style bg=black
+set-window-option -g window-status-bell-style fg=colour248
+
+set -g status-interval 1
+
+# messages should linger for more than 750ms
+set-option -g display-time 2500
+
+setw -g aggressive-resize on
+
+# apps should know that this is 'screen' and not xterm. Slight compatibility
+# reasons. tmux should be running in xterm-256colors, and set TERM so that
+# applications within tmux see screen-256colors tmux does not support -bce
+# (background color erase)
+set -g default-terminal 'xterm-256color'
+
+######
+# Recursive tmux.
+bind-key b send-prefix
+# Start window indexes at 1 instead of 0.
+set -g base-index 1
+
+# mouse to scroll buffer
+set -g mouse on
+
+# less invasive, better place for clock etc (at end, new command will stop loading if not found...)
+set -g status-position bottom
+
+# Laod powerline.
+run-shell "powerline-daemon -q"
+source /usr/local/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
+
+# Default to current dir for now panes/winodws.
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
+
+# Increase history limit.
+set-option -g history-limit 900000
+
+# Enable scroll.
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+bind -n C-WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
