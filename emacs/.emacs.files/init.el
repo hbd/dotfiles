@@ -9,9 +9,16 @@
 
 (load "init-packages")
 (load "init-general")
-(load "init-multi-cursor")
+(load "init-duplicate")
+(load "init-fold")
 (load "init-flycheck")
 (load "init-go")
+(load "init-json")
+(load "init-multi-cursor")
+(load "init-nuke")
+(load "init-org")
+(load "init-plantuml")
+(load "init-yaml")
 
 ;;; init.el ends here
 

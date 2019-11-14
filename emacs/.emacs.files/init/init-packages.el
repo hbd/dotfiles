@@ -13,17 +13,34 @@
 (setq package-list
       '(
 	;; Major modes.
-	go-mode	
+	go-mode
         markdown-mode
+	yaml-mode
+	plantuml-mode
 
 	;; Minor modes.
 	lsp-mode
 	multiple-cursors
+	origami
 
 	;; Golang.
 	flycheck-golangci-lint
         go-guru
         go-rename
+
+	;; YAML.
+	flycheck-yamllint
+
+	;; JSON.
+	json-mode
+
+	;; Web.
+	flycheck-css-colorguard
+	js-import
+	js-format
+
+	;; PlantUML.
+	flycheck-plantuml
 
 	;; Utilities.
 	ag ;; Simple and quick searching.
@@ -31,6 +48,7 @@
 	company-lsp
 	flycheck
 	lsp-ui
+	use-package
 	))
 
 ;; Install the missing packages.
