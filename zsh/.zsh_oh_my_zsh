@@ -29,6 +29,7 @@ plugins=(
     gpg-agent
     history-search-multi-word
     kubectl
+    minikube
     mosh
     rsync
     ssh-agent
