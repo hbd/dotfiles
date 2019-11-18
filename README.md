@@ -3,3 +3,6 @@
 ## install
 
 TBD
+
+- Spectacle config
+- GPG key

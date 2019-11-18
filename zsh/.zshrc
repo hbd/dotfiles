@@ -40,4 +40,4 @@ main
 b=$(mstime)
 echo " loaded in $(echo "($b - $a)" | \bc) ms."
 
-tput rc; tput el
+# tput rc; tput el
