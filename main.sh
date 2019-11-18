@@ -22,6 +22,7 @@ function main {
     # install most docker
     # install zsh-multi-search
     # install diff-so-fancy
+    # brew install gnupg
 
     # mac specific.
     # if uname == Darwin then install brew docker-machine
@@ -30,6 +31,7 @@ function main {
     link git
     link emacs
     link tmux
+    ln -s ~/.dotfiles/iterm ~/iterm
 }
 
 main
