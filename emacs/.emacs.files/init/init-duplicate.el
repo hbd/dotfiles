@@ -18,4 +18,4 @@ there's a region, all lines that region covers will be duplicated."
         (insert region)
         (setq end (point)))
       (goto-char (+ origin (* (length region) arg) arg)))))
-(global-set-key (kbd "C-c C-d") 'duplicate-current-line-or-region)
+(global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)

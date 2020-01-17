@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: spew
+# key: spew
+# contributor : @hbd
+# --
+spew.Dump($0)

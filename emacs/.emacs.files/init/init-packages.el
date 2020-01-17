@@ -7,16 +7,20 @@
 
 ;; Refresh package management.
 (package-initialize)
+(package-refresh-contents)
 
 ;; List of packages we want to install.
 (defvar package-list)
 (setq package-list
       '(
 	;; Major modes.
-	go-mode
+	;; go-mode
         markdown-mode
 	yaml-mode
 	plantuml-mode
+	terraform-mode
+	js2-mode
+	dockerfile-mode
 
 	;; Minor modes.
 	lsp-mode
@@ -24,9 +28,9 @@
 	origami
 
 	;; Golang.
-	flycheck-golangci-lint
-        go-guru
-        go-rename
+	;; flycheck-golangci-lint
+        ;; go-guru
+        ;; go-rename
 
 	;; YAML.
 	flycheck-yamllint
@@ -46,9 +50,11 @@
 	ag ;; Simple and quick searching.
 	company
 	company-lsp
-	flycheck
+	;; flycheck
 	lsp-ui
 	use-package
+	use-package-ensure-system-package
+	yasnippet
 	))
 
 ;; Install the missing packages.

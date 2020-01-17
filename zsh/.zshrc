@@ -9,12 +9,7 @@ function main() {
     source ~/.zsh_alias
     source ~/.zsh_env
     source ~/.zsh_func
-    # source ~/.zsh_theme
-
-    # source powerline config.
-    # source /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
-    # source vendored plugins.
+    source ~/.zsh_minikube
 }
 
 # helper to retrieve current time in milliseconds.

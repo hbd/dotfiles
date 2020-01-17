@@ -10,15 +10,20 @@
 (load "init-packages")
 (load "init-general")
 (load "init-duplicate")
+(load "init-docker")
 (load "init-fold")
 (load "init-flycheck")
 (load "init-go")
+(load "init-javascript")
 (load "init-json")
 (load "init-multi-cursor")
 (load "init-nuke")
 (load "init-org")
 (load "init-plantuml")
+(load "init-snippet")
 (load "init-yaml")
+(load "init-whichkey")
+(load "init-transpose")
 
 ;;; init.el ends here
 
