@@ -3,7 +3,9 @@
 [alias]
   b    = branch
   co   = checkout
-  cd   = !git checkout development && git pull
+  cob   = checkout -b
+  cm   = !git checkout master && git pull
+  cd   = !git checkout master && git pull
   st   = status -sb
   ac   = commit -p -m
   cop  = checkout -p
@@ -38,5 +40,9 @@
   show = diff-so-fancy | less --tabs=1,5 -RFX
 
 [credential]
-  helper = !aws codecommit credential-helper $@
+  helper      = !aws codecommit credential-helper $@
   UseHttpPath = true
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = git://github.com/

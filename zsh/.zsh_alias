@@ -25,4 +25,3 @@ alias emacs="emacsclient -a '' -ct"
 
 # kubernetes
 alias kub=kubectl
-alias devkub="kubectl --context='arn:aws:eks:us-east-1:276144034913:cluster/k8s_shared'"

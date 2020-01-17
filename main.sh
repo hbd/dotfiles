@@ -17,15 +17,24 @@ function link {
 }
 
 function main {
-    # install zsh
-    # install oh-my-zsh # vendor instead?
-    # install most docker
-    # install zsh-multi-search
-    # install diff-so-fancy
-    # brew install gnupg
+    # install most docker zsh diff-so-fancy python3 ag go terraform node
+    # brew install golangci/tap/golangci-lint
+    # pip install --user powerline-status
+    # brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
+    # pip install powerline-gitstatus
+    # tmux/fonts/install.sh
+
+    # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
 
     # mac specific.
-    # if uname == Darwin then install brew docker-machine
+    # if uname == Darwin then
+    #   install brew docker-machine coreutils gnupg; brew cask install virtualbox spectacle iterm2
+
+    # kubernetes
+    # brew install helm docker-machine-driver-hyperkit
+
+    # install nvm.
+    # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
     link zsh
     link git
