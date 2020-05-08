@@ -47,7 +47,12 @@
 
 (use-package flycheck-golangci-lint
   :ensure t
-  :hook (go-mode . flycheck-golangci-lint-setup))
+  :hook (go-mode . flycheck-golangci-lint-setup)
+  )
+
+(use-package go-tag
+  :ensure t
+  )
 
 ;; ----
 ;; Original.

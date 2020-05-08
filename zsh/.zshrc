@@ -9,7 +9,8 @@ function main() {
     source ~/.zsh_alias
     source ~/.zsh_env
     source ~/.zsh_func
-    source ~/.zsh_minikube
+    # source ~/.zsh_minikube
+    source ~/.zsh_private
 }
 
 # helper to retrieve current time in milliseconds.

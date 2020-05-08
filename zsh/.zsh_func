@@ -23,6 +23,25 @@ function kbsip {
     echo "$(minikube ip):$svc_port"
 }
 
+function kbsip {
+    requested_svc=$1
+
+    local svcs=$(kubectl get svc -o json | jq '.items[].spec | select(.selector."app.kubernetes.io/instance" == "'$requested_svc'")')
+    local svc_ip=$(echo $svcs | jq -r '.clusterIP')
+    local svc_port=$(echo $svcs | jq -r '.ports[].nodePort')
+    echo "$(minikube ip):$svc_port"
+}
+
+# klog streams all kubernetes logs with a name labale equal to the provided name.
+# example: klog user-api
+function klog {
+    local requested_svc=$1
+    local label="app.kubernetes.io/name=$1"
+
+    kubectl logs -l $label -f --all-containers=true | jq
+}
+
+
 function assume {
     # Login if not already signed in.
     op get account > /dev/null 2> /dev/null
@@ -47,4 +66,29 @@ function deldynamotables {
         echo "deleting $table"
     	# echo "aws dynamodb delete-table --table-name $table --endpoint-url http://$(minikube ip):30421"
     done
+}
+
+# ghopen attempts to open the current directory's github repo.
+# TODO: Check for go.mod containing 'github.com' first?
+#       How to assume repo organization/user prefix?
+function ghopen {
+    open https://github.com/bellhops/$(pwd | tr '/' '\n' | tail -n 1)
+}
+
+# dsh starts a shell in a docker container of the specific image, mounting the current directory.
+# Defaults to alpine:latest
+function dsh() {
+    case $1 in
+	 alpine)
+	     docker run -it --rm -v ${PWD}:/root alpine sh
+	     ;;
+	 python)
+	     docker run -it --rm -v ${PWD}:/root python:2 bash
+	     ;;
+	 c)
+	     docker run -it --rm -v ${PWD}:/root $2 sh
+	     ;;
+	 *)
+	     docker run -it --rm -v ${PWD}:/root alpine sh
+    esac
 }

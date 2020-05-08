@@ -20,7 +20,7 @@ fi
 # "most" as pager is more than "less" and "more".
 export PAGER="most"
 # set editor to emacs.
-export EDITOR="emacs"
+export EDITOR="emacsclient -a '' -ct"
 
 # go.
 export GO111MODULE=on
@@ -39,15 +39,20 @@ export WORDCHARS='*?_-[]~&;!#%^(){}<>'
 
 # path.
 # Pip binary path.
-export PIP_PATH=$(python -m site --user-base)/bin
+export PIP_PATH=$(python3 -m site --user-base)/bin
 
 # AWS.
 export AWS_REGION=us-east-1
 
 # kubernetes.
-export GATEWAY_URL=http://$(minikube ip):30100
+# export GATEWAY_URL=http://$(minikube ip):30100
 
 # - Go
 # - Pip
 # - Rust
 export PATH="$PATH:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin"
+
+# dirs.
+export wrk=/Users/zakkeener/wrk
+export prj=/Users/zakkeener/prj
+export boo=$wrk/booking-api

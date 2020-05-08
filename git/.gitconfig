@@ -30,9 +30,14 @@
 [url "git@bitbucket.org:"]
   insteadOf = https://bitbucket.org/
 
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = http://github.com/
+  insteadOf = git://github.com/
+
 [user]
-  email      = zakkeener@gmail.com
-  name       = Zachary A. Keener
+	email = zak.keener@getbellhops.com
+	name = Zak
   signingkey = 3247C06ED74FFC0B
 
 [pager]
@@ -43,6 +48,8 @@
   helper      = !aws codecommit credential-helper $@
   UseHttpPath = true
 
-[url "git@github.com:"]
-  insteadOf = https://github.com/
-  insteadOf = git://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -8,4 +8,3 @@
 	 ("C-c l"      . flycheck-list-errors)    ;; Ctrl-l    to display error list.
 	 )
   )
-

@@ -14,6 +14,7 @@
 (load "init-fold")
 (load "init-flycheck")
 (load "init-go")
+(load "init-highlight")
 (load "init-javascript")
 (load "init-json")
 (load "init-multi-cursor")
@@ -22,6 +23,7 @@
 (load "init-plantuml")
 (load "init-snippet")
 (load "init-yaml")
+(load "init-waka")
 (load "init-whichkey")
 (load "init-transpose")
 

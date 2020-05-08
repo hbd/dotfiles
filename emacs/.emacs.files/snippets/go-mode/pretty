@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: prettyprint
+# key: pretty
+# contributor : @hbd
+# --
+pretty.Printf("%# v\n", $0)
