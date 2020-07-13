@@ -102,7 +102,6 @@
 (global-set-key (kbd "C-c C-k") 'kill-compilation)
 (global-set-key (kbd "C-c C-l") 'linum-mode)
 
-
 ;; Editing emacs.
 (global-set-key (kbd "C-c C-p") 'eval-region)
 
