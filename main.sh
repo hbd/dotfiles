@@ -31,12 +31,15 @@ function main {
 
     # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
 
-    # mac specific.
+    # Mac specific.
     # if uname == Darwin then
     #   install brew docker-machine coreutils gnupg; brew cask install virtualbox spectacle iterm2
 
-    # kubernetes
+    # Kubernetes.
     # brew install helm docker-machine-driver-hyperkit
+
+    # Install nvm
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 
     link zsh
     link git

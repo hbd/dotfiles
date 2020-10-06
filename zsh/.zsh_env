@@ -50,7 +50,8 @@ export AWS_REGION=us-east-1
 # - Go
 # - Pip
 # - Rust
-export PATH="$PATH:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin"
+# - Brew
+export PATH="$PATH:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin:/usr/local/sbin"
 
 # dirs.
 export wrk=/Users/zakkeener/wrk

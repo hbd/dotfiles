@@ -23,7 +23,6 @@
 (load "init-plantuml")
 (load "init-snippet")
 (load "init-yaml")
-(load "init-waka")
 (load "init-whichkey")
 (load "init-transpose")
 

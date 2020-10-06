@@ -22,6 +22,7 @@
 	terraform-mode
 	js2-mode
 	dockerfile-mode
+	graphql-mode
 
 	;; Minor modes.
 	lsp-mode
