@@ -1,3 +1,6 @@
+# global.
+export DOTFILES="$HOME/.dotfiles"
+
 # common.
 # set host metadata.
 [ -z "$LANG" ]     && export LANG=en_US.UTF-8
@@ -10,14 +13,46 @@
 
 # mac-specific.
 if [ "$HOSTTYPE" = "Darwin" ]; then
-export MANPATH="/usr/local/man:$MANPATH"
-export LSCOLORS="ExFxCxDxBxegedabagacad"
+    export MANPATH="/usr/local/man:$MANPATH"
+    export LSCOLORS="ExFxCxDxBxegedabagacad"
 fi
 
 # "most" as pager is more than "less" and "more".
 export PAGER="most"
 # set editor to emacs.
-export EDITOR="emacs"
+export EDITOR="emacsclient -a '' -ct"
 
 # go.
 export GO111MODULE=on
+# List of repos containing private modules.
+# Docs: https://golang.org/cmd/go/#hdr-Module_configuration_for_non_public_modules
+export GOPRIVATE="github.com/bellhops"
+export GOPROXY="https://proxy.golang.org/"
+
+# node.
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# remove '/', '=', '.', '$' from WORDCHARS to stop backspacing up to the removed chars.
+export WORDCHARS='*?_-[]~&;!#%^(){}<>'
+
+# path.
+# Pip binary path.
+export PIP_PATH=$(python3 -m site --user-base)/bin
+
+# AWS.
+export AWS_REGION=us-east-1
+
+# kubernetes.
+# export GATEWAY_URL=http://$(minikube ip):30100
+
+# - Go
+# - Pip
+# - Rust
+export PATH="$PATH:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin"
+
+# dirs.
+export wrk=/Users/zakkeener/wrk
+export prj=/Users/zakkeener/prj
+export boo=$wrk/booking-api

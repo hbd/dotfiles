@@ -1,20 +1,16 @@
 # github.com/hbd
 
 # global config.
-source .zsh_global
-fpath=(/usr/local/share/zsh-completions $fpath)
+source ~/.zsh_global
+fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions $fpath)
 
 # user config.
 function main() {
     source ~/.zsh_alias
     source ~/.zsh_env
     source ~/.zsh_func
-    # source ~/.zsh_theme
-
-    # source powerline config.
-    # source /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
-    # source vendored plugins.
+    # source ~/.zsh_minikube
+    source ~/.zsh_private
 }
 
 # helper to retrieve current time in milliseconds.
@@ -28,9 +24,10 @@ echo
 
 echo -n "Loading oh-my-zsh..."
 a=$(mstime)
-export ZSH="/Users/zak/.oh-my-zsh"
-source .zsh_oh_my_zsh
+export ZSH="$HOME/.oh-my-zsh"
+source ~/.zsh_oh_my_zsh
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 b=$(mstime)
 echo " loaded in $(echo "($b - $a)" | \bc) ms."
 

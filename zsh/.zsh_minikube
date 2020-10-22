@@ -1,0 +1,32 @@
+# Minikube
+# Source this file to manage minikube autostart with shell.
+
+# Autostart minikube default.
+MINIKUBE_AUTOSTART='true'
+
+# Small helper to configure minikube.
+function _loadminikube() {
+    if [ ! -f /tmp/.minikubecache ]; then
+	echo "Starting minikube..."
+	minikube start
+	echo "Minikube started."
+	minikube docker-env > /tmp/.minikubecache
+	minikube ip         > /tmp/.minikubeip
+    fi
+    # MINIKUBE_IP is a reserved env var.
+    export MINIKUBE_IP_ADDR=$(cat /tmp/.minikubeip)
+    eval $(cat /tmp/.minikubecache)
+}
+
+function loadminikube() {
+    echo "Loading minikube config..."
+    _loadminikube
+}
+
+function minikubeclear {
+    \rm -f /tmp/.minikubecache /tmp/.minikubeip
+   loadminikube
+}
+
+# If requested, auto start the docker-machine
+[ "$MINIKUBE_AUTOSTART" = true ] && loadminikube

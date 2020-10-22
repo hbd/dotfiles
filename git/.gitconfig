@@ -3,7 +3,9 @@
 [alias]
   b    = branch
   co   = checkout
-  cd   = !git checkout development && git pull
+  cob   = checkout -b
+  cm   = !git checkout master && git pull
+  cd   = !git checkout master && git pull
   st   = status -sb
   ac   = commit -p -m
   cop  = checkout -p
@@ -15,6 +17,8 @@
   puu  = !export CGB=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $CGB
   l    = log --oneline --graph --format=\"%C(auto)%h %C(auto)%d %Creset%s %Cblue%cd %C(white)%cN\"
   la   = log --oneline --graph --all --format=\"%C(auto)%h %C(auto)%d %Creset%s %Cblue%cd %C(white)%cN\"
+  ls   = branch -a
+  lsr  = branch -r
 
 [color]
   ui          = auto
@@ -26,9 +30,14 @@
 [url "git@bitbucket.org:"]
   insteadOf = https://bitbucket.org/
 
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+  insteadOf = http://github.com/
+  insteadOf = git://github.com/
+
 [user]
-  email      = zakkeener@gmail.com
-  name       = Zachary A. Keener
+	email = zak.keener@getbellhops.com
+	name = Zak
   signingkey = 3247C06ED74FFC0B
 
 [pager]
@@ -36,5 +45,11 @@
   show = diff-so-fancy | less --tabs=1,5 -RFX
 
 [credential]
-  helper = !aws codecommit credential-helper $@
+  helper      = !aws codecommit credential-helper $@
   UseHttpPath = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

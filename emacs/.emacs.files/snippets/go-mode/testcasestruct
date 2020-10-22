@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: testcasestruct
+# key: tcstruct
+# contributor : @hbd
+# --
+
+testCases := []struct {
+	name    string
+}{
+	{
+		name: "$0",
+	},
+}

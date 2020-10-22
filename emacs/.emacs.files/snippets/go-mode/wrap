@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: wrap
+# key: wrap
+# contributor : @hbd
+# --
+return errors.Wrap(err, "$0")

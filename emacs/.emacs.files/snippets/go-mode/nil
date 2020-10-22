@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: ifnil
+# key: nil
+# contributor : @hbd
+# --
+if $0 != nil {
+      	
+}

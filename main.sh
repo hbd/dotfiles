@@ -8,7 +8,7 @@ function echo2 {
 # example usage: link zsh
 function link {
     echo2 "linking files in $1..."
-    local files=$(ls -a $1 | grep .zsh)
+    local files=$(ls -a $1 | grep $1)
     local curdir=$(pwd)
     for f in $files; do
 	path="$HOME/$f"
@@ -17,17 +17,33 @@ function link {
 }
 
 function main {
-    # install zsh
-    # install oh-my-zsh # vendor instead?
-    # install most docker
-    # install zsh-multi-search
-    # install diff-so-fancy
+    # install brew if not found.
+    #   if uname == Darwin && (hash brew; $? == 1); then curl ...; fi
+
+    brew install python go tmux zsh emacs diff-so-fancy ag gpg2 nvm htop
+    brew cask install specatacle iterm2
+    brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
+    brew install golangci/tap/golangci-lint
+
+    pip3 install --user powerline-status
+    pip3 install powerline-gitstatus
+    ~/.dotfiles/tmux/fonts/install.sh
+
+    # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
 
     # mac specific.
-    # if uname == Darwin then install brew docker-machine
+    # if uname == Darwin then
+    #   install brew docker-machine coreutils gnupg; brew cask install virtualbox spectacle iterm2
+
+    # kubernetes
+    # brew install helm docker-machine-driver-hyperkit
 
     link zsh
     link git
+    link emacs
+    link tmux
+    ln -s ~/.dotfiles/iterm ~/iterm
 }
 
 main
+

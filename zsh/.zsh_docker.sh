@@ -1,5 +1,5 @@
 # Autostart docker-machine default.
-DOCKER_MACHINE_AUTOSTART='true'
+DOCKER_MACHINE_AUTOSTART='false'
 DOCKER_MACHINE_NAME='dev'
 
 # Small helper to configure docker.

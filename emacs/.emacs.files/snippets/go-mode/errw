@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: errorw
+# key: errw
+# contributor : @hbd
+# --
+if err != nil {
+	return errors.Wrap(err, "$0")
+}

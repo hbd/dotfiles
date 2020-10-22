@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: testcase
+# key: tc
+# contributor : @hbd
+# --
+for _, tc := range testCases {
+	t.Run(tc.name, func(t *testing.T) {
+	    $0
+	})
+}

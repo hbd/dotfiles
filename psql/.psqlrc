@@ -1,0 +1,45 @@
+
+-- psql config.
+-- github.com/hbd | urfav.dev
+
+\set QUIET 1
+
+\x auto
+
+\pset linestyle unicode
+
+\pset null ␀
+
+\set PROMPT1 '%[%033[0;97;40m%]==%#%[%033[0m%] '
+\set PROMPT2 '%[%033[4;97;40m%]=%#%[%033[0m%] '
+
+\timing on
+
+\set HISTFILE ~/.psql_history-:DBNAME
+\set HISTSIZE 5000
+
+\set show_slow_queries 'SELECT (total_time / 1000 / 60) as total_minutes, (total_time/calls) as average_time, query FROM pg_stat_statements ORDER BY 1 DESC LIMIT 100;'
+
+SELECT 'SELECT
+	schemaname AS table_schema,
+	relname AS table_name,
+	pg_size_pretty(pg_total_relation_size(relid))
+		AS total_size,
+	pg_size_pretty(pg_relation_size(relid)) AS data_size,
+	pg_size_pretty(
+		pg_total_relation_size(relid)
+		- pg_relation_size(relid)
+	)
+		AS external_size
+FROM
+	pg_catalog.pg_statio_user_tables
+ORDER BY
+	pg_total_relation_size(relid) DESC,
+	pg_relation_size(relid) DESC
+LIMIT
+	10;' show_biggest_tables \gset
+
+
+\set QUIET 0
+
+-- end config.
