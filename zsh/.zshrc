@@ -27,6 +27,7 @@ a=$(mstime)
 export ZSH="$HOME/.oh-my-zsh"
 source ~/.zsh_oh_my_zsh
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 b=$(mstime)
 echo " loaded in $(echo "($b - $a)" | \bc) ms."
 
