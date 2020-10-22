@@ -23,6 +23,7 @@ function main {
     # brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
     # pip install powerline-gitstatus
     # tmux/fonts/install.sh
+    # go install goimports
 
     # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
 
