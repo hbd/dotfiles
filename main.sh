@@ -17,6 +17,14 @@ function link {
 }
 
 function main {
+    # install most docker zsh diff-so-fancy python3 ag go terraform node
+    # brew install golangci/tap/golangci-lint
+    # pip install --user powerline-status
+    # brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
+    # pip install powerline-gitstatus
+    # tmux/fonts/install.sh
+    # go install goimports
+
     # install brew if not found.
     #   if uname == Darwin && (hash brew; $? == 1); then curl ...; fi
 

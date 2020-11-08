@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: typescript component
+# key: ts
+# contributor : @hbd
+# --
+
+import React from 'react';
+$1
+export const $2: React.FC<$3> = ($4) => {
+       return (
+       	      <div>
+	      	      $5
+	      </div>
+       )
+};

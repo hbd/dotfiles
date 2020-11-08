@@ -21,6 +21,7 @@
 (load "init-nuke")
 (load "init-org")
 (load "init-plantuml")
+(load "init-react")
 (load "init-snippet")
 (load "init-yaml")
 (load "init-whichkey")

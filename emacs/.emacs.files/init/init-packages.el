@@ -7,8 +7,7 @@
 
 ;; Refresh package management.
 (package-initialize)
-;; Required upon init.
-;; (package-refresh-contents)
+(package-refresh-contents)
 
 ;; List of packages we want to install.
 (defvar package-list)
