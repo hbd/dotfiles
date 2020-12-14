@@ -7,12 +7,7 @@
 
 ;; Refresh package management.
 (package-initialize)
-<<<<<<< HEAD
 (package-refresh-contents)
-=======
-;; Required upon init.
-;; (package-refresh-contents)
->>>>>>> 5d831e226da690d25d9d949beb2bf11410999063
 
 ;; List of packages we want to install.
 (defvar package-list)

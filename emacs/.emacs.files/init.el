@@ -9,6 +9,7 @@
 
 (load "init-packages")
 (load "init-general")
+(load "init-company")
 (load "init-duplicate")
 (load "init-docker")
 (load "init-fold")
@@ -23,9 +24,9 @@
 (load "init-plantuml")
 (load "init-react")
 (load "init-snippet")
-(load "init-yaml")
 (load "init-whichkey")
 (load "init-transpose")
+(load "init-yaml")
 
 ;;; init.el ends here
 
