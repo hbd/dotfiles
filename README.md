@@ -1,10 +1,5 @@
 # hbd's dotfiles
 
-## install
+# SSH
 
-TBD
-
-- Spectacle
-- GPG key
-- iTerm link to home
-- Zoom?
+`ssh-keygen -t ed25519`
