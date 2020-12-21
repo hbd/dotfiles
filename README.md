@@ -1,10 +1,16 @@
 # hbd's dotfiles
 
-## install
+# SSH
 
-TBD
+`ssh-keygen -t ed25519`
 
-- Spectacle
-- GPG key
-- iTerm link to home
-- Zoom?
+# Homebrew
+
+Multiple user installation, assuming `brew` group:
+
+``` bash
+brew doctor
+sudo chgrp -R brew $(brew --prefix)/*
+sudo chmod -R g+w $(brew --prefix)/*
+brew doctor
+```
