@@ -29,6 +29,11 @@ alias kub=kubectl
 # jq.
 alias jqj="jq -R 'fromjson? | select(type == "\"object\"")'"
 
+# python.
+alias python="python3"
+alias pydoc="pydoc3"
+alias pip="pip3"
+
 # Default editors.
 # Note: Way to alias wildcard extension?
 alias -s {go,mod,sum,tf}=emacs
