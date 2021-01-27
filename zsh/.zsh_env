@@ -60,7 +60,7 @@ export AWS_REGION=us-east-1
 # - Rust
 # - VSCode
 # - Brew
-export PATH="${PATH+:$PATH}/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # dirs.
 export wrk=/Users/zakkeener/wrk

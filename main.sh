@@ -17,34 +17,18 @@ function link {
 }
 
 function main {
-    # install most docker zsh diff-so-fancy python3 ag go terraform node
-    # brew install golangci/tap/golangci-lint
-    # pip install --user powerline-status
-    # brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
-    # pip install powerline-gitstatus
-    # tmux/fonts/install.sh
-    # go install goimports
-
     # install brew if not found.
-    #   if uname == Darwin && (hash brew; $? == 1); then curl ...; fi
+    # HOMEBREW_URL='/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    # if uname == Darwin && (hash brew; $? == 1); then curl $HOMEBREW_URL; fi
 
-    brew install python go tmux zsh emacs diff-so-fancy ag gpg2 nvm htop
-    brew cask install specatacle iterm2
+    brew install python go tmux zsh emacs diff-so-fancy ag gpg2 nvm htop terraform most
+    brew install iterm2 --cask # spectacle
     brew tap homebrew/cask-fonts; brew cask install font-fira-code font-fira-mono-for-powerline
     brew install golangci/tap/golangci-lint
 
     pip3 install --user powerline-status
     pip3 install powerline-gitstatus
     ~/.dotfiles/tmux/fonts/install.sh
-
-    # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
-
-    # mac specific.
-    # if uname == Darwin then
-    #   install brew docker-machine coreutils gnupg; brew cask install virtualbox spectacle iterm2
-
-    # kubernetes
-    # brew install helm docker-machine-driver-hyperkit
 
     link zsh
     link git
@@ -55,3 +39,13 @@ function main {
 
 main
 
+function legacy {
+    # docker-machine create --virtualbox-disk-size "20480" --virtualbox-memory "4096" --virtualbox-cpu-count "4" dev
+
+    # mac specific.
+    # if uname == Darwin then
+    #   install brew docker-machine coreutils gnupg; brew cask install virtualbox spectacle iterm2
+
+    # kubernetes
+    # brew install helm docker-machine-driver-hyperkit
+}
