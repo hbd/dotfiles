@@ -11,6 +11,7 @@ function main() {
     source ~/.zsh_func
     # source ~/.zsh_minikube
     source ~/.zsh_private
+    source ~/.zsh_plugins/zsh-z/zsh-z.plugin.zsh
 }
 
 # helper to retrieve current time in milliseconds.

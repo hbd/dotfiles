@@ -92,3 +92,11 @@ function dsh() {
 	     docker run -it --rm -v ${PWD}:/root alpine sh
     esac
 }
+
+function tmux-dev() {
+    tmux new-session -d 'poly'
+    tmux split-window -v
+    tmux split-window -v
+    tmux new-window 'logs'
+    tmux -2 attach-session -d
+}

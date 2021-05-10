@@ -33,7 +33,9 @@ alias jqj="jq -R 'fromjson? | select(type == "\"object\"")'"
 alias python="python3"
 alias pydoc="pydoc3"
 alias pip="pip3"
+alias pycharm="/Applications/PyCharm.app/Contents/MacOS/pycharm"
 
 # Default editors.
 # Note: Way to alias wildcard extension?
 alias -s {go,mod,sum,tf}=emacs
+

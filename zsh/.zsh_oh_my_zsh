@@ -22,7 +22,6 @@ DOCKER_MACHINE_NAME="default"
 plugins=(
     docker
     encode64
-    zsh-syntax-highlighting
     git
     gnu-utils
     golang

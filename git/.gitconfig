@@ -1,24 +1,29 @@
 # github.com/hbd
 
 [alias]
-  b    = branch
-  co   = checkout
-  cob   = checkout -b
-  cm   = !git checkout master && git pull
-  cd   = !git checkout master && git pull
-  st   = status -sb
   ac   = commit -p -m
+  b    = branch
+  cd   = !git checkout master && git pull
+  cu   = !git checkout master && git pull upstream master
+  cm   = !git checkout master && git pull
+  co   = checkout
+  cob  = checkout -b
   cop  = checkout -p
-  lg1  = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-  lg2  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  pull = pull --rebase
-  pod  = pull origin development
-  pom  = pull origin master
-  puu  = !export CGB=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $CGB
+  fu   = fetch upstream
   l    = log --oneline --graph --format=\"%C(auto)%h %C(auto)%d %Creset%s %Cblue%cd %C(white)%cN\"
   la   = log --oneline --graph --all --format=\"%C(auto)%h %C(auto)%d %Creset%s %Cblue%cd %C(white)%cN\"
+  lg1  = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+  lg2  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ls   = branch -a
   lsr  = branch -r
+  pod  = pull origin development
+  pom  = pull origin master
+  pull = pull --rebase
+  pum  = pull upstream master
+  puu  = !export CGB=$(git rev-parse --abbrev-ref HEAD) && git push -u origin $CGB
+  pustage  = !export CGB=$(git rev-parse --abbrev-ref HEAD) && git push upstream $CGB:staging -f
+  sh   = stash -p
+  st   = status -sb
 
 [color]
   ui          = auto
@@ -36,8 +41,8 @@
   insteadOf = git://github.com/
 
 [user]
-	email = zak.keener@getbellhops.com
-	name = Zak
+  email = zak@polyoperations.com
+  name = Zak
   signingkey = 3247C06ED74FFC0B
 
 [pager]
@@ -53,3 +58,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
+
+# Common repo defaults.
+# git config --global pull.rebase true                                                                                                                                                                    [17:18:02]
+# git config --global fetch.prune true
+# git config --global diff.colorMoved zebra
