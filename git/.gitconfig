@@ -41,7 +41,7 @@
   insteadOf = git://github.com/
 
 [user]
-  email = zak@polyoperations.com
+  email = zak@tydo.com
   name = Zak
   signingkey = 3247C06ED74FFC0B
 

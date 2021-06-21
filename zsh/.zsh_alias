@@ -8,8 +8,8 @@ alias d64="decode64"
 alias bc="bc -l $HOME/.bcrc"
 
 # user.
-alias l='ls -al'
-alias ll='ls -l'
+alias l='ls -alGp'
+alias ll='ls -lGp'
 alias pbc="pbcopy"
 # get size of top-level dirs.
 # KB.

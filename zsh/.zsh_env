@@ -15,6 +15,7 @@ export DOTFILES="$HOME/.dotfiles"
 if [ "$HOSTTYPE" = "Darwin" ]; then
     export MANPATH="/usr/local/man:$MANPATH"
     export LSCOLORS="ExFxCxDxBxegedabagacad"
+    export CLICOLOR="1"
 fi
 
 # "most" as pager is more than "less" and "more".
@@ -33,7 +34,6 @@ export GOPROXY="https://proxy.golang.org/"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /usr/local/opt/nvm/nvm.sh
 
 # remove '/', '=', '.', '$' from WORDCHARS to stop backspacing up to the removed chars.
 export WORDCHARS='*?_-[]~&;!#%^(){}<>'
@@ -53,7 +53,7 @@ export AWS_REGION=us-east-1
 # - Rust
 # - VSCode
 # - Brew
-export PATH="$PATH:/usr/local/sbin:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/usr/local/sbin:$HOME/go/bin:$PIP_PATH:$HOME/.cargo/bin:/usr/local/opt/helm@2/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin"
 
 # dirs.
 export wrk=/Users/zakkeener/wrk
